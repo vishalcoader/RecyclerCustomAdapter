@@ -1,0 +1,66 @@
+// This is mainactivity java file of Recyclerview 
+//How to data insert in Recyclerview
+
+package com.example.myrecyclerview;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+
+import com.example.myrecyclerview.Adapter.RecyclerCustomAdapter;
+import com.example.myrecyclerview.models.RecyclerModel;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    ArrayList<RecyclerModel> arrayData = new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerid);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        arrayData.add(new RecyclerModel(R.drawable.userw1,"vishal","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw2,"Deepak","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw3,"Saurabh","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw4,"Divyanshu","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw5,"Vipin","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw6,"Tara","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw7,"Anjali","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw8,"Shoiab","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw9,"Sonal","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw10,"Akriti","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw11,"Shivangi","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw12,"Plak","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw13,"Suryansh","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw1,"vishal","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw2,"Deepak","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw3,"Saurabh","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw4,"Divyanshu","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw5,"Vipin","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw6,"Tara","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw7,"Anjali","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw8,"Shoiab","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw9,"Sonal","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw10,"Akriti","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw11,"Shivangi","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw12,"Plak","dubeyvishal1505@gmail.com","9076796734"));
+        arrayData.add(new RecyclerModel(R.drawable.userw13,"Suryansh","dubeyvishal1505@gmail.com","9076796734"));
+
+        RecyclerCustomAdapter adapter = new RecyclerCustomAdapter(this,arrayData);
+        recyclerView.setAdapter(adapter);
+
+
+
+
+
+
+    }
+}
+
