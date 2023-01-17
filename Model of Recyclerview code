@@ -1,0 +1,33 @@
+// this is code of Recycler of how to make a structure in Recycler view
+
+package com.example.myrecyclerview.models;
+
+public class RecyclerModel {
+
+    private int image;
+    private String name,email,mobile;
+
+    public RecyclerModel(int image,String name,String email,String mobile)
+    {
+        this.email=email;
+        this.image=image;
+        this.mobile=mobile;
+        this.name=name;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
