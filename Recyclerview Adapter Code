@@ -1,0 +1,69 @@
+// This is Recycler view of custom adapter Adapter code 
+
+package com.example.myrecyclerview.Adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myrecyclerview.R;
+import com.example.myrecyclerview.models.RecyclerModel;
+
+import java.util.ArrayList;
+
+public class RecyclerCustomAdapter extends RecyclerView.Adapter<RecyclerCustomAdapter.ViewHolder> {
+
+    private Context context;
+    ArrayList<RecyclerModel> arrayData;
+    public RecyclerCustomAdapter(Context context, ArrayList<RecyclerModel> arrayData)
+    {
+        this.context=context;
+        this.arrayData=arrayData;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.custom_layout,parent,false);
+        ViewHolder viewHolder=new ViewHolder(view);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.imageView.setImageResource(arrayData.get(position).getImage());
+        holder.email.setText(arrayData.get(position).getEmail());
+        holder.name.setText(arrayData.get(position).getName());
+        holder.mobile.setText(arrayData.get(position).getMobile());
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return arrayData.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+        ImageView imageView;
+        TextView email,mobile,name;
+
+        public ViewHolder(View itemview){
+            super(itemview);
+
+            email = itemview.findViewById(R.id.emailid);
+            mobile = itemview.findViewById(R.id.mobileid);
+            name = itemview.findViewById(R.id.nameid);
+            imageView = itemview.findViewById(R.id.imageid);
+
+
+        }
+
+
+    }
+}
